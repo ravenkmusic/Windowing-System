@@ -43,12 +43,18 @@ export class ProgramWindow {
         }
       }
       move(position){
+        let maxX = this.screenSize.width - this.size.width;
+        let maxY = this.screenSize.height - this.size.height;
         if (position.x < 0 || position.y < 0){
           this.position.x = 0;
           this.position.y = 0;
+        } else if(position.x > this.screenSize.width || position.y > this.screenSize.height){
+          this.position.x = maxX;
+          this.position.y = maxY;
         } else {
           this.position.x = position.x;
           this.position.y = position.y;
         }
+      }
       }
   }
