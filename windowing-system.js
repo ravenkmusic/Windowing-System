@@ -32,4 +32,23 @@ export class ProgramWindow {
       this.size = new Size();
       this.position = new Position();
     }
+
+    resize(size){
+        if (size.width < 1 || size.height < 1){
+          this.size.width = 1;
+          this.size.height = 1;
+        } else {
+          this.size.width = size.width;
+          this.size.height = size.height;
+        }
+      }
+      move(position){
+        if (position.x < 0 || position.y < 0){
+          this.position.x = 0;
+          this.position.y = 0;
+        } else {
+          this.position.x = position.x;
+          this.position.y = position.y;
+        }
+      }
   }
